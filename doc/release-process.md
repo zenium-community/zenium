@@ -6,8 +6,8 @@ Release Process
 ### Before every release candidate
 
 * Update release candidate version in `configure.ac` (`CLIENT_VERSION_RC`).
-* Update manpages (after rebuilding the binaries), see [gen-manpages.py](https://github.com/bitcoin/bitcoin/blob/master/contrib/devtools/README.md#gen-manpagespy).
-* Update bitcoin.conf and commit changes if they exist, see [gen-bitcoin-conf.sh](https://github.com/bitcoin/bitcoin/blob/master/contrib/devtools/README.md#gen-bitcoin-confsh).
+* Update manpages (after rebuilding the binaries), see [gen-manpages.py](https://github.com/zenium-community/zenium/blob/master/contrib/devtools/README.md#gen-manpagespy).
+* Update bitcoin.conf and commit changes if they exist, see [gen-bitcoin-conf.sh](https://github.com/zenium-community/zenium/blob/master/contrib/devtools/README.md#gen-bitcoin-confsh).
 
 ### Before every major and minor release
 
@@ -28,7 +28,7 @@ Release Process
 
 #### Before branch-off
 
-* Update translations see [translation_process.md](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations see [translation_process.md](https://github.com/zenium-community/zenium/blob/master/doc/translation_process.md#synchronising-translations).
 * Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/bitcoin/bitcoin/pull/27488) for an example.
 * Update the following variables in [`src/kernel/chainparams.cpp`](/src/kernel/chainparams.cpp) for mainnet, testnet, and signet:
   - `m_assumed_blockchain_size` and `m_assumed_chain_state_size` with the current size plus some overhead (see
@@ -64,26 +64,26 @@ Release Process
 #### After branch-off (on the major release branch)
 
 - Update the versions.
-- Create the draft, named "*version* Release Notes Draft", as a [collaborative wiki](https://github.com/bitcoin-core/bitcoin-devwiki/wiki/_new).
+- Create the draft, named "*version* Release Notes Draft", as a [collaborative wiki](https://github.com/zenium-community/zenium-devwiki/wiki/_new).
 - Clear the release notes: `cp doc/release-notes-empty-template.md doc/release-notes.md`
 - Create a pinned meta-issue for testing the release candidate (see [this issue](https://github.com/bitcoin/bitcoin/issues/27621) for an example) and provide a link to it in the release announcements where useful.
 - Translations on Transifex
     - Change the auto-update URL for the new major version's resource away from `master` and to the branch, e.g. `https://raw.githubusercontent.com/bitcoin/bitcoin/<branch>/src/qt/locale/bitcoin_en.xlf`. Do not forget this or it will keep tracking the translations on master instead, drifting away from the specific major release.
 - Prune inputs from the qa-assets repo (See [pruning
-  inputs](https://github.com/bitcoin-core/qa-assets#pruning-inputs)).
+  inputs](https://github.com/zenium-community/qa-assets#pruning-inputs)).
 
 #### Before final release
 
-- Merge the release notes from [the wiki](https://github.com/bitcoin-core/bitcoin-devwiki/wiki/) into the branch.
+- Merge the release notes from [the wiki](https://github.com/zenium-community/zenium-devwiki/wiki/) into the branch.
 - Ensure the "Needs release note" label is removed from all relevant pull
   requests and issues:
-  https://github.com/bitcoin/bitcoin/issues?q=label%3A%22Needs+release+note%22
+  https://github.com/zenium-community/zenium/issues?q=label%3A%22Needs+release+note%22
 
 #### Tagging a release (candidate)
 
-To tag the version (or release candidate) in git, use the `make-tag.py` script from [bitcoin-maintainer-tools](https://github.com/bitcoin-core/bitcoin-maintainer-tools). From the root of the repository run:
+To tag the version (or release candidate) in git, use the `make-tag.py` script from [zenium-maintainer-tools](https://github.com/zenium-community/zenium-maintainer-tools). From the root of the repository run:
 
-    ../bitcoin-maintainer-tools/make-tag.py v(new version, e.g. 25.0)
+    ../zenium-maintainer-tools/make-tag.py v(new version, e.g. 25.0)
 
 This will perform a few last-minute consistency checks in the build system files, and if they pass, create a signed tag.
 
@@ -97,13 +97,13 @@ Install Guix using one of the installation methods detailed in
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/bitcoin-core/guix.sigs.git
-    git clone https://github.com/bitcoin-core/bitcoin-detached-sigs.git
-    git clone https://github.com/bitcoin/bitcoin.git
+    git clone https://github.com/zenium-community/guix.sigs.git
+    git clone https://github.com/zenium-community/zenium-detached-sigs.git
+    git clone https://github.com/zenium-community/zenium.git
 
 ### Write the release notes
 
-Open a draft of the release notes for collaborative editing at https://github.com/bitcoin-core/bitcoin-devwiki/wiki.
+Open a draft of the release notes for collaborative editing at https://github.com/zenium-community/zenium-devwiki/wiki.
 
 For the period during which the notes are being edited on the wiki, the version on the branch should be wiped and replaced with a link to the wiki which should be used for all announcements until `-final`.
 
@@ -156,7 +156,7 @@ git commit -m "Add attestations by ${SIGNER} for ${VERSION} non-codesigned"
 popd
 ```
 
-Then open a Pull Request to the [guix.sigs repository](https://github.com/bitcoin-core/guix.sigs).
+Then open a Pull Request to the [guix.sigs repository](https://github.com/zenium-community/guix.sigs).
 
 ## Codesigning
 
@@ -180,12 +180,12 @@ In the `guix-build-${VERSION}/output/x86_64-w64-mingw32` directory:
 
 ### Windows and macOS codesigners only: test code signatures
 It is advised to test that the code signature attaches properly prior to tagging by performing the `guix-codesign` step.
-However if this is done, once the release has been tagged in the bitcoin-detached-sigs repo, the `guix-codesign` step must be performed again in order for the guix attestation to be valid when compared against the attestations of non-codesigner builds. The directories created by `guix-codesign` will need to be cleared prior to running `guix-codesign` again.
+However if this is done, once the release has been tagged in the zenium-detached-sigs repo, the `guix-codesign` step must be performed again in order for the guix attestation to be valid when compared against the attestations of non-codesigner builds. The directories created by `guix-codesign` will need to be cleared prior to running `guix-codesign` again.
 
 ### Windows and macOS codesigners only: Commit the detached codesign payloads
 
 ```sh
-pushd ./bitcoin-detached-sigs
+pushd ./zenium-detached-sigs
 # checkout or create the appropriate branch for this release series
 git checkout --orphan <branch>
 # if you are the macOS codesigner
@@ -204,7 +204,7 @@ popd
 ### Non-codesigners: wait for Windows and macOS detached signatures
 
 - Once the Windows and macOS builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [bitcoin-detached-sigs](https://github.com/bitcoin-core/bitcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [zenium-detached-sigs](https://github.com/zenium-community/zenium-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 ### Create the codesigned build outputs
 
@@ -223,7 +223,7 @@ git commit -m "Add attestations by ${SIGNER} for ${VERSION} codesigned"
 popd
 ```
 
-Then open a Pull Request to the [guix.sigs repository](https://github.com/bitcoin-core/guix.sigs).
+Then open a Pull Request to the [guix.sigs repository](https://github.com/zenium-community/guix.sigs).
 
 ## After 6 or more people have guix-built and their results match
 
@@ -272,26 +272,26 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
   - blog post
 
-  - maintained versions [table](https://github.com/bitcoin-core/bitcoincore.org/commits/master/_includes/posts/maintenance-table.md)
+  - maintained versions [table](https://github.com/zenium-community/zenium.org/commits/master/_includes/posts/maintenance-table.md)
 
   - RPC documentation update
 
-      - See https://github.com/bitcoin-core/bitcoincore.org/blob/master/contrib/doc-gen/
+      - See https://github.com/zenium-community/zenium.org/blob/master/contrib/doc-gen/
 
 
 - Update repositories
 
-  - Delete post-EOL [release branches](https://github.com/bitcoin/bitcoin/branches/all) and create a tag `v${branch_name}-final`.
+  - Delete post-EOL [release branches](https://github.com/zenium-community/zenium/branches/all) and create a tag `v${branch_name}-final`.
 
-  - Delete ["Needs backport" labels](https://github.com/bitcoin/bitcoin/labels?q=backport) for non-existing branches.
+  - Delete ["Needs backport" labels](https://github.com/zenium-community/zenium/labels?q=backport) for non-existing branches.
 
   - Update packaging repo
 
       - Push the flatpak to flathub, e.g. https://github.com/flathub/org.bitcoincore.bitcoin-qt/pull/2
 
-      - Push the snap, see https://github.com/bitcoin-core/packaging/blob/main/snap/local/build.md
+      - Push the snap, see https://github.com/zenium-community/packaging/blob/main/snap/local/build.md
 
-  - Create a [new GitHub release](https://github.com/bitcoin/bitcoin/releases/new) with a link to the archived release notes
+  - Create a [new GitHub release](https://github.com/zenium-community/zenium/releases/new) with a link to the archived release notes
 
 - Announce the release:
 

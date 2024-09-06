@@ -50,10 +50,10 @@ The Transifex Bitcoin project config file is included as part of the repo. It ca
 
 ### Synchronising translations
 
-To assist in updating translations, a helper script is available in the [maintainer-tools repo](https://github.com/bitcoin-core/bitcoin-maintainer-tools). To use it and commit the result, simply do:
+To assist in updating translations, a helper script is available in the [maintainer-tools repo](https://github.com/zenium-community/zenium-maintainer-tools). To use it and commit the result, simply do:
 
 ```
-python3 ../bitcoin-maintainer-tools/update-translations.py
+python3 ../zenium-maintainer-tools/update-translations.py
 git commit -a
 ```
 

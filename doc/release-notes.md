@@ -1,1 +1,1 @@
-See https://github.com/bitcoin-core/bitcoin-devwiki/wiki/28.0-Release-Notes-Draft
+See https://github.com/zenium-community/zenium-devwiki/wiki/28.0-Release-Notes-Draft
