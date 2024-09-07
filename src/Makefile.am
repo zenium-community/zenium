@@ -87,7 +87,7 @@ if BUILD_BITCOIND
 endif
 
 if BUILD_BITCOIN_NODE
-  bin_PROGRAMS += bitcoin-node
+  bin_PROGRAMS += zenium-node
 endif
 
 if BUILD_BITCOIN_CLI
@@ -774,7 +774,7 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# bitcoind & bitcoin-node binaries #
+# bitcoind & zenium-node binaries #
 bitcoin_daemon_sources = bitcoind.cpp
 bitcoin_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 bitcoin_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -804,11 +804,11 @@ bitcoind_CXXFLAGS = $(bitcoin_bin_cxxflags)
 bitcoind_LDFLAGS = $(bitcoin_bin_ldflags)
 bitcoind_LDADD = $(LIBBITCOIN_NODE) $(bitcoin_bin_ldadd)
 
-bitcoin_node_SOURCES = $(bitcoin_daemon_sources) init/bitcoin-node.cpp
-bitcoin_node_CPPFLAGS = $(bitcoin_bin_cppflags)
-bitcoin_node_CXXFLAGS = $(bitcoin_bin_cxxflags)
-bitcoin_node_LDFLAGS = $(bitcoin_bin_ldflags)
-bitcoin_node_LDADD = $(LIBBITCOIN_NODE) $(bitcoin_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
+zenium_node_SOURCES = $(bitcoin_daemon_sources) init/bitcoin-node.cpp
+zenium_node_CPPFLAGS = $(bitcoin_bin_cppflags)
+zenium_node_CXXFLAGS = $(bitcoin_bin_cxxflags)
+zenium_node_LDFLAGS = $(bitcoin_bin_ldflags)
+zenium_node_LDADD = $(LIBBITCOIN_NODE) $(bitcoin_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
 
 # zenium-cli binary #
 zenium_cli_SOURCES = bitcoin-cli.cpp
