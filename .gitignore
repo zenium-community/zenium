@@ -5,7 +5,7 @@
 src/bitcoin
 src/bitcoind
 src/zenium-cli
-src/bitcoin-gui
+src/zenium-gui
 src/zenium-node
 src/zenium-tx
 src/zenium-util

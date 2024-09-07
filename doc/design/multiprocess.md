@@ -39,7 +39,7 @@ The new architecture divides the existing code into three specialized executable
 
 - `zenium-node`: Manages the P2P node, indexes, and JSON-RPC server.
 - `zenium-wallet`: Handles all wallet functionality.
-- `bitcoin-gui`: Provides a standalone Qt-based GUI.
+- `zenium-gui`: Provides a standalone Qt-based GUI.
 
 This modular approach is designed to enhance security through component isolation and improve usability by allowing independent operation of each module. This allows for new use-cases, such as running the node on a dedicated machine and operating wallets and GUIs on separate machines with the flexibility to start and stop them as needed.
 
@@ -51,7 +51,7 @@ This subdivision could be extended in the future. For example, indexes could be 
 flowchart LR
     node[zenium-node] -- listens on --> socket["&lt;datadir&gt;/node.sock"]
     wallet[zenium-wallet] -- connects to --> socket
-    gui[bitcoin-gui] -- connects to --> socket
+    gui[zenium-gui] -- connects to --> socket
 ```
 
 </td></tr><tr><td>
