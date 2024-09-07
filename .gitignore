@@ -92,7 +92,7 @@ src/qt/bitcoin-qt.includes
 *.qm
 Makefile
 !depends/Makefile
-src/qt/bitcoin-qt
+src/qt/zenium-qt
 Bitcoin-Qt.app
 
 # Qt Creator

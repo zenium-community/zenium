@@ -13,7 +13,7 @@ BINARIES = [
 'src/zenium-tx',
 'src/zenium-wallet',
 'src/zenium-util',
-'src/qt/bitcoin-qt',
+'src/qt/zenium-qt',
 ]
 
 # Paths to external utilities.

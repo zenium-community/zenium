@@ -27,7 +27,7 @@ git clone https://github.com/zenium-community/zenium.git
 
 #### Wallet Dependencies
 
-It is not necessary to build wallet functionality to run either `bitcoind` or `bitcoin-qt`.
+It is not necessary to build wallet functionality to run either `bitcoind` or `zenium-qt`.
 
 ###### Descriptor Wallet Support
 

@@ -30,7 +30,7 @@ if test -n "$PKG_CONFIG_LIBDIR"; then
 fi
 
 BITCOIN_DAEMON_NAME=bitcoind
-BITCOIN_GUI_NAME=bitcoin-qt
+BITCOIN_GUI_NAME=zenium-qt
 BITCOIN_TEST_NAME=test_zenium
 BITCOIN_CLI_NAME=zenium-cli
 BITCOIN_TX_NAME=zenium-tx
@@ -258,7 +258,7 @@ AC_ARG_WITH([mpgen],
 
 AC_ARG_ENABLE([multiprocess],
   [AS_HELP_STRING([--enable-multiprocess],
-  [build multiprocess zenium-node, zenium-wallet, and zenium-gui executables in addition to monolithic bitcoind and bitcoin-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
+  [build multiprocess zenium-node, zenium-wallet, and zenium-gui executables in addition to monolithic bitcoind and zenium-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
   [enable_multiprocess=$enableval],
   [enable_multiprocess=no])
 
