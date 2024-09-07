@@ -72,7 +72,7 @@ TestShell is already running!
 ## 4. Interacting with the `TestShell`
 
 Unlike the `BitcoinTestFramework` class, the `TestShell` keeps the underlying
-Bitcoind subprocesses (nodes) and logging utilities running until the user
+Zeniumd subprocesses (nodes) and logging utilities running until the user
 explicitly shuts down the `TestShell` object.
 
 During the time between the `setup` and `shutdown` calls, all `zeniumd` node
