@@ -11,7 +11,7 @@ BINARIES = [
 'src/bitcoind',
 'src/zenium-cli',
 'src/zenium-tx',
-'src/bitcoin-wallet',
+'src/zenium-wallet',
 'src/zenium-util',
 'src/qt/bitcoin-qt',
 ]
