@@ -9,7 +9,7 @@ src/zenium-gui
 src/zenium-node
 src/zenium-tx
 src/zenium-util
-src/bitcoin-chainstate
+src/zenium-chainstate
 src/zenium-wallet
 src/test/fuzz/fuzz
 src/test/test_bitcoin
