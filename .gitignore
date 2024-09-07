@@ -12,7 +12,7 @@ src/zenium-util
 src/zenium-chainstate
 src/zenium-wallet
 src/test/fuzz/fuzz
-src/test/test_bitcoin
+src/test/test_zenium
 src/qt/test/test_zenium-qt
 
 # autoreconf
@@ -116,7 +116,7 @@ releases
 *.gcno
 *.gcda
 /*.info
-test_bitcoin.coverage/
+test_zenium.coverage/
 total.coverage/
 fuzz.coverage/
 coverage_percent.txt
