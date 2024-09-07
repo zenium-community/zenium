@@ -10,7 +10,7 @@ import tempfile
 BINARIES = [
 'src/bitcoind',
 'src/zenium-cli',
-'src/bitcoin-tx',
+'src/zenium-tx',
 'src/bitcoin-wallet',
 'src/bitcoin-util',
 'src/qt/bitcoin-qt',
