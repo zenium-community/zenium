@@ -7,7 +7,7 @@ Release Process
 
 * Update release candidate version in `configure.ac` (`CLIENT_VERSION_RC`).
 * Update manpages (after rebuilding the binaries), see [gen-manpages.py](https://github.com/zenium-community/zenium/blob/master/contrib/devtools/README.md#gen-manpagespy).
-* Update bitcoin.conf and commit changes if they exist, see [gen-bitcoin-conf.sh](https://github.com/zenium-community/zenium/blob/master/contrib/devtools/README.md#gen-bitcoin-confsh).
+* Update zenium.conf and commit changes if they exist, see [gen-zenium-conf.sh](https://github.com/zenium-community/zenium/blob/master/contrib/devtools/README.md#gen-zenium-confsh).
 
 ### Before every major and minor release
 

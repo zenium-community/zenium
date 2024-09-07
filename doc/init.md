@@ -21,7 +21,7 @@ Configuration
 ---------------------------------
 
 Running zeniumd as a daemon does not require any manual configuration. You may
-set the `rpcauth` setting in the `bitcoin.conf` configuration file to override
+set the `rpcauth` setting in the `zenium.conf` configuration file to override
 the default behaviour of using a special cookie for authentication.
 
 This password does not have to be remembered or typed as it is mostly used
@@ -46,7 +46,7 @@ This allows for running zeniumd without having to do any manual configuration.
 relative to the data directory. `wallet` *only* supports relative paths.
 
 To generate an example configuration file that describes the configuration settings,
-see [contrib/devtools/README.md](../contrib/devtools/README.md#gen-bitcoin-confsh).
+see [contrib/devtools/README.md](../contrib/devtools/README.md#gen-zenium-confsh).
 
 Paths
 ---------------------------------
@@ -56,7 +56,7 @@ Paths
 All three configurations assume several paths that might need to be adjusted.
 
     Binary:              /usr/bin/zeniumd
-    Configuration file:  /etc/bitcoin/bitcoin.conf
+    Configuration file:  /etc/bitcoin/zenium.conf
     Data directory:      /var/lib/zeniumd
     PID file:            /var/run/zeniumd/zeniumd.pid (OpenRC and Upstart) or
                          /run/zeniumd/zeniumd.pid (systemd)
@@ -76,10 +76,10 @@ bitcoin group to do so. This does not allow
 for the listing of files under the directory.
 
 NOTE: It is not currently possible to override `datadir` in
-`/etc/bitcoin/bitcoin.conf` with the current systemd, OpenRC, and Upstart init
+`/etc/bitcoin/zenium.conf` with the current systemd, OpenRC, and Upstart init
 files out-of-the-box. This is because the command line options specified in the
 init files take precedence over the configurations in
-`/etc/bitcoin/bitcoin.conf`. However, some init systems have their own
+`/etc/bitcoin/zenium.conf`. However, some init systems have their own
 configuration mechanisms that would allow for overriding the command line
 options specified in the init files (e.g. setting `BITCOIND_DATADIR` for
 OpenRC).
@@ -87,7 +87,7 @@ OpenRC).
 ### macOS
 
     Binary:              /usr/local/bin/zeniumd
-    Configuration file:  ~/Library/Application Support/Bitcoin/bitcoin.conf
+    Configuration file:  ~/Library/Application Support/Bitcoin/zenium.conf
     Data directory:      ~/Library/Application Support/Bitcoin
     Lock file:           ~/Library/Application Support/Bitcoin/.lock
 
