@@ -34,7 +34,7 @@ BITCOIN_GUI_NAME=bitcoin-qt
 BITCOIN_TEST_NAME=test_bitcoin
 BITCOIN_CLI_NAME=zenium-cli
 BITCOIN_TX_NAME=zenium-tx
-BITCOIN_UTIL_NAME=bitcoin-util
+BITCOIN_UTIL_NAME=zenium-util
 BITCOIN_CHAINSTATE_NAME=bitcoin-chainstate
 BITCOIN_WALLET_TOOL_NAME=bitcoin-wallet
 dnl Multi Process
@@ -571,7 +571,7 @@ CORE_CPPFLAGS="$CORE_CPPFLAGS -DHAVE_BUILD_INFO"
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build zenium-cli zenium-tx bitcoin-util bitcoin-wallet (default=yes)])],
+  [build zenium-cli zenium-tx zenium-util bitcoin-wallet (default=yes)])],
   [build_bitcoin_utils=$withval],
   [build_bitcoin_utils=yes])
 
@@ -595,7 +595,7 @@ AC_ARG_ENABLE([util-wallet],
 
 AC_ARG_ENABLE([util-util],
   [AS_HELP_STRING([--enable-util-util],
-  [build bitcoin-util])],
+  [build zenium-util])],
   [build_bitcoin_util=$enableval],
   [build_bitcoin_util=$build_bitcoin_utils])
 
@@ -1418,7 +1418,7 @@ AC_MSG_CHECKING([whether to build bitcoin-wallet])
 AM_CONDITIONAL([BUILD_BITCOIN_WALLET], [test $build_bitcoin_wallet = "yes"])
 AC_MSG_RESULT($build_bitcoin_wallet)
 
-AC_MSG_CHECKING([whether to build bitcoin-util])
+AC_MSG_CHECKING([whether to build zenium-util])
 AM_CONDITIONAL([BUILD_BITCOIN_UTIL], [test $build_bitcoin_util = "yes"])
 AC_MSG_RESULT($build_bitcoin_util)
 

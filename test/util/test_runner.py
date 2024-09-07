@@ -74,7 +74,7 @@ def bctest(testDir, testObj, buildenv):
     """
     # Get the exec names and arguments
     execprog = os.path.join(buildenv["BUILDDIR"], "src", testObj["exec"] + buildenv["EXEEXT"])
-    if testObj["exec"] == "./bitcoin-util":
+    if testObj["exec"] == "./zenium-util":
         execprog = os.getenv("BITCOINUTIL", default=execprog)
     elif testObj["exec"] == "./zenium-tx":
         execprog = os.getenv("BITCOINTX", default=execprog)
