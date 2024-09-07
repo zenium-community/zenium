@@ -445,7 +445,7 @@ endif
 if TARGET_WINDOWS
 else
 if ENABLE_BENCH
-	@echo "Running bench/bench_bitcoin (one iteration sanity check, only high priority)..."
+	@echo "Running bench/bench_zenium (one iteration sanity check, only high priority)..."
 	$(BENCH_BINARY) -sanity-check -priority-level=high
 endif
 endif

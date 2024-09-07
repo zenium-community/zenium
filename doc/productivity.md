@@ -77,7 +77,7 @@ Obviously, it is important to build and run the tests at appropriate times -- bu
 ```sh
 make src/bitcoind src/zenium-cli
 make src/qt/zenium-qt
-make -C src bitcoin_bench
+make -C src zenium_bench
 ```
 
 (You can and should combine this with `-j`, as above, for a parallel build.)
