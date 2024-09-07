@@ -45,7 +45,7 @@ test_zenium --log_level=all --run_test=getarg_tests
 test case is entered, for example.
 
 `test_zenium` also accepts some of the command line arguments accepted by
-`bitcoind`. Use `--` to separate these sets of arguments:
+`zeniumd`. Use `--` to separate these sets of arguments:
 
 ```bash
 test_zenium --log_level=all --run_test=getarg_tests -- -printtoconsole=1
@@ -65,7 +65,7 @@ test_zenium --run_test=getarg_tests/doubledash
 generated pathname within `test_common_Bitcoin Core/`, which in turn is within
 the system's temporary directory (see
 [`temp_directory_path`](https://en.cppreference.com/w/cpp/filesystem/temp_directory_path)).
-This data directory looks like a simplified form of the standard `bitcoind` data
+This data directory looks like a simplified form of the standard `zeniumd` data
 directory. Its content will vary depending on the test, but it will always
 have a `debug.log` file, for example.
 

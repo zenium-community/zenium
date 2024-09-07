@@ -14,7 +14,7 @@
 class ArgsManager;
 
 /**
- * CBaseChainParams defines the base parameters (shared between zenium-cli and bitcoind)
+ * CBaseChainParams defines the base parameters (shared between zenium-cli and zeniumd)
  * of a given instance of the Bitcoin system.
  */
 class CBaseChainParams

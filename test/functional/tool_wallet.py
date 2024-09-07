@@ -531,7 +531,7 @@ class ToolWalletTest(BitcoinTestFramework):
         self.nodes[0].loadwallet("unclean_lsn")
         # Next cause a bunch of writes by filling the keypool
         wallet.keypoolrefill(wallet.getwalletinfo()["keypoolsize"] + 100)
-        # Lastly kill bitcoind so that the LSNs don't get reset
+        # Lastly kill zeniumd so that the LSNs don't get reset
         self.nodes[0].process.kill()
         self.nodes[0].wait_until_stopped(expected_ret_code=1 if platform.system() == "Windows" else -9)
         assert self.nodes[0].is_node_stopped()

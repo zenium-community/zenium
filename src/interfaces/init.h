@@ -24,7 +24,7 @@ class Ipc;
 //! and get access to other interfaces (Node, Chain, Wallet, etc).
 //!
 //! There is a different Init interface implementation for each process
-//! (zenium-gui, zenium-node, zenium-wallet, bitcoind, zenium-qt) and each
+//! (zenium-gui, zenium-node, zenium-wallet, zeniumd, zenium-qt) and each
 //! implementation can implement the make methods for interfaces it supports.
 //! The default make methods all return null.
 class Init

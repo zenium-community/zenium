@@ -442,7 +442,7 @@ def main():
     parser.add_argument('--failfast', '-F', action='store_true', help='stop execution after the first test failure')
     parser.add_argument('--filter', help='filter scripts to run by regular expression')
     parser.add_argument("--nocleanup", dest="nocleanup", default=False, action="store_true",
-                        help="Leave bitcoinds and test.* datadir on exit or error")
+                        help="Leave zeniumds and test.* datadir on exit or error")
     parser.add_argument('--resultsfile', '-r', help='store test results (as CSV) to the provided file')
 
 
@@ -575,11 +575,11 @@ def main():
 def run_tests(*, test_list, src_dir, build_dir, tmpdir, jobs=1, enable_coverage=False, args=None, combined_logs_len=0, failfast=False, use_term_control, results_filepath=None):
     args = args or []
 
-    # Warn if bitcoind is already running
+    # Warn if zeniumd is already running
     try:
         # pgrep exits with code zero when one or more matching processes found
-        if subprocess.run(["pgrep", "-x", "bitcoind"], stdout=subprocess.DEVNULL).returncode == 0:
-            print("%sWARNING!%s There is already a bitcoind process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
+        if subprocess.run(["pgrep", "-x", "zeniumd"], stdout=subprocess.DEVNULL).returncode == 0:
+            print("%sWARNING!%s There is already a zeniumd process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
     except OSError:
         # pgrep not supported
         pass

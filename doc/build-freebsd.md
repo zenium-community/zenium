@@ -2,7 +2,7 @@
 
 **Updated for FreeBSD [14.0](https://www.freebsd.org/releases/14.0R/announce/)**
 
-This guide describes how to build bitcoind, command-line utilities, and GUI on FreeBSD.
+This guide describes how to build zeniumd, command-line utilities, and GUI on FreeBSD.
 
 ## Preparation
 
@@ -25,7 +25,7 @@ git clone https://github.com/zenium-community/zenium.git
 ### 3. Install Optional Dependencies
 
 #### Wallet Dependencies
-It is not necessary to build wallet functionality to run either `bitcoind` or `zenium-qt`.
+It is not necessary to build wallet functionality to run either `zeniumd` or `zenium-qt`.
 
 ###### Descriptor Wallet Support
 

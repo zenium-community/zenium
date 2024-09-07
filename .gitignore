@@ -3,7 +3,7 @@
 *.exe
 *.pdb
 src/bitcoin
-src/bitcoind
+src/zeniumd
 src/zenium-cli
 src/zenium-gui
 src/zenium-node

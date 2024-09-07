@@ -29,7 +29,7 @@ if test -n "$PKG_CONFIG_LIBDIR"; then
   PKG_CONFIG="env PKG_CONFIG_LIBDIR=$PKG_CONFIG_LIBDIR $PKG_CONFIG"
 fi
 
-BITCOIN_DAEMON_NAME=bitcoind
+BITCOIN_DAEMON_NAME=zeniumd
 BITCOIN_GUI_NAME=zenium-qt
 BITCOIN_TEST_NAME=test_zenium
 BITCOIN_CLI_NAME=zenium-cli
@@ -258,7 +258,7 @@ AC_ARG_WITH([mpgen],
 
 AC_ARG_ENABLE([multiprocess],
   [AS_HELP_STRING([--enable-multiprocess],
-  [build multiprocess zenium-node, zenium-wallet, and zenium-gui executables in addition to monolithic bitcoind and zenium-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
+  [build multiprocess zenium-node, zenium-wallet, and zenium-gui executables in addition to monolithic zeniumd and zenium-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
   [enable_multiprocess=$enableval],
   [enable_multiprocess=no])
 
@@ -613,7 +613,7 @@ AC_ARG_WITH([experimental-kernel-lib],
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build bitcoind daemon (default=yes)])],
+  [build zeniumd daemon (default=yes)])],
   [build_bitcoind=$withval],
   [build_bitcoind=yes])
 
@@ -905,7 +905,7 @@ AC_CHECK_DECLS([getifaddrs, freeifaddrs],[CHECK_SOCKET],,
     #include <ifaddrs.h>]
 )
 
-dnl These are used for daemonization in bitcoind
+dnl These are used for daemonization in zeniumd
 AC_CHECK_DECLS([fork])
 AC_CHECK_DECLS([setsid])
 
@@ -1402,7 +1402,7 @@ if test "$build_multiprocess" != "no"; then
   AC_SUBST(MPGEN_PREFIX)
 fi
 
-AC_MSG_CHECKING([whether to build bitcoind])
+AC_MSG_CHECKING([whether to build zeniumd])
 AM_CONDITIONAL([BUILD_BITCOIND], [test $build_bitcoind = "yes"])
 AC_MSG_RESULT($build_bitcoind)
 

@@ -2,7 +2,7 @@
 
 **Updated for NetBSD [10.0](https://netbsd.org/releases/formal-10/NetBSD-10.0.html)**
 
-This guide describes how to build bitcoind, command-line utilities, and GUI on NetBSD.
+This guide describes how to build zeniumd, command-line utilities, and GUI on NetBSD.
 
 ## Preparation
 
@@ -46,7 +46,7 @@ git clone https://github.com/zenium-community/zenium.git
 
 #### Wallet Dependencies
 
-It is not necessary to build wallet functionality to run bitcoind or the GUI.
+It is not necessary to build wallet functionality to run zeniumd or the GUI.
 
 ###### Descriptor Wallet Support
 

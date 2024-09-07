@@ -8,7 +8,7 @@ import sys
 import tempfile
 
 BINARIES = [
-'src/bitcoind',
+'src/zeniumd',
 'src/zenium-cli',
 'src/zenium-tx',
 'src/zenium-wallet',

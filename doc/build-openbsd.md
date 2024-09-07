@@ -2,7 +2,7 @@
 
 **Updated for OpenBSD [7.5](https://www.openbsd.org/75.html)**
 
-This guide describes how to build bitcoind, command-line utilities, and GUI on OpenBSD.
+This guide describes how to build zeniumd, command-line utilities, and GUI on OpenBSD.
 
 ## Preparation
 
@@ -27,7 +27,7 @@ git clone https://github.com/zenium-community/zenium.git
 
 #### Wallet Dependencies
 
-It is not necessary to build wallet functionality to run either `bitcoind` or `zenium-qt`.
+It is not necessary to build wallet functionality to run either `zeniumd` or `zenium-qt`.
 
 ###### Descriptor Wallet Support
 

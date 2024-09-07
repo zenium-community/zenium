@@ -9,11 +9,11 @@
 | *libbitcoin_kernel*      | Consensus engine and support library used for validation by *libbitcoin_node*. |
 | *libbitcoinqt*           | GUI functionality used by *zenium-qt* and *zenium-gui* executables. |
 | *libbitcoin_ipc*         | IPC functionality used by *zenium-node*, *zenium-wallet*, *zenium-gui* executables to communicate when [`--enable-multiprocess`](multiprocess.md) is used. |
-| *libbitcoin_node*        | P2P and RPC server functionality used by *bitcoind* and *zenium-qt* executables. |
+| *libbitcoin_node*        | P2P and RPC server functionality used by *zeniumd* and *zenium-qt* executables. |
 | *libbitcoin_util*        | Home for common functionality shared by different executables and libraries. Similar to *libbitcoin_common*, but lower-level (see [Dependencies](#dependencies)). |
-| *libbitcoin_wallet*      | Wallet functionality used by *bitcoind* and *zenium-wallet* executables. |
+| *libbitcoin_wallet*      | Wallet functionality used by *zeniumd* and *zenium-wallet* executables. |
 | *libbitcoin_wallet_tool* | Lower-level wallet functionality used by *zenium-wallet* executable. |
-| *libbitcoin_zmq*         | [ZeroMQ](../zmq.md) functionality used by *bitcoind* and *zenium-qt* executables. |
+| *libbitcoin_zmq*         | [ZeroMQ](../zmq.md) functionality used by *zeniumd* and *zenium-qt* executables. |
 
 ## Conventions
 
@@ -41,8 +41,8 @@ graph TD;
 
 zenium-cli[zenium-cli]-->libbitcoin_cli;
 
-bitcoind[bitcoind]-->libbitcoin_node;
-bitcoind[bitcoind]-->libbitcoin_wallet;
+zeniumd[zeniumd]-->libbitcoin_node;
+zeniumd[zeniumd]-->libbitcoin_wallet;
 
 zenium-qt[zenium-qt]-->libbitcoin_node;
 zenium-qt[zenium-qt]-->libbitcoinqt;
@@ -83,7 +83,7 @@ libbitcoin_wallet_tool-->libbitcoin_wallet;
 libbitcoin_wallet_tool-->libbitcoin_util;
 
 classDef bold stroke-width:2px, font-weight:bold, font-size: smaller;
-class zenium-qt,bitcoind,zenium-cli,zenium-wallet bold
+class zenium-qt,zeniumd,zenium-cli,zenium-wallet bold
 ```
 </td></tr><tr><td>
 

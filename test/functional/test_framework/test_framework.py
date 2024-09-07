@@ -159,9 +159,9 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         previous_releases_path = os.getenv("PREVIOUS_RELEASES_DIR") or os.getcwd() + "/releases"
         parser = argparse.ArgumentParser(usage="%(prog)s [options]")
         parser.add_argument("--nocleanup", dest="nocleanup", default=False, action="store_true",
-                            help="Leave bitcoinds and test.* datadir on exit or error")
+                            help="Leave zeniumds and test.* datadir on exit or error")
         parser.add_argument("--noshutdown", dest="noshutdown", default=False, action="store_true",
-                            help="Don't stop bitcoinds after the test execution")
+                            help="Don't stop zeniumds after the test execution")
         parser.add_argument("--cachedir", dest="cachedir", default=os.path.abspath(os.path.dirname(test_file) + "/../cache"),
                             help="Directory for caching pregenerated datadirs (default: %(default)s)")
         parser.add_argument("--tmpdir", dest="tmpdir", help="Root directory for datadirs (must not exist)")
@@ -236,7 +236,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         """Update self.options with the paths of all binaries from environment variables or their default values"""
 
         binaries = {
-            "bitcoind": ("bitcoind", "BITCOIND"),
+            "zeniumd": ("bitcoind", "BITCOIND"),
             "zenium-cli": ("bitcoincli", "BITCOINCLI"),
             "zenium-util": ("bitcoinutil", "BITCOINUTIL"),
             "zenium-wallet": ("bitcoinwallet", "BITCOINWALLET"),
@@ -319,7 +319,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         else:
             for node in self.nodes:
                 node.cleanup_on_exit = False
-            self.log.info("Note: bitcoinds were not stopped and may still be running")
+            self.log.info("Note: zeniumds were not stopped and may still be running")
 
         should_clean_up = (
             not self.options.nocleanup and
@@ -510,7 +510,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         if versions is None:
             versions = [None] * num_nodes
         if binary is None:
-            binary = [get_bin_from_version(v, 'bitcoind', self.options.bitcoind) for v in versions]
+            binary = [get_bin_from_version(v, 'zeniumd', self.options.bitcoind) for v in versions]
         if binary_cli is None:
             binary_cli = [get_bin_from_version(v, 'zenium-cli', self.options.bitcoincli) for v in versions]
         assert_equal(len(extra_confs), num_nodes)
@@ -546,7 +546,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
                 test_node_i.replace_in_config([('[regtest]', '')])
 
     def start_node(self, i, *args, **kwargs):
-        """Start a bitcoind"""
+        """Start a zeniumd"""
 
         node = self.nodes[i]
 
@@ -557,7 +557,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             coverage.write_all_rpc_commands(self.options.coveragedir, node.rpc)
 
     def start_nodes(self, extra_args=None, *args, **kwargs):
-        """Start multiple bitcoinds"""
+        """Start multiple zeniumds"""
 
         if extra_args is None:
             extra_args = [None] * self.num_nodes
@@ -577,11 +577,11 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
                 coverage.write_all_rpc_commands(self.options.coveragedir, node.rpc)
 
     def stop_node(self, i, expected_stderr='', wait=0):
-        """Stop a bitcoind test node"""
+        """Stop a zeniumd test node"""
         self.nodes[i].stop_node(expected_stderr, wait=wait)
 
     def stop_nodes(self, wait=0):
-        """Stop multiple bitcoind test nodes"""
+        """Stop multiple zeniumd test nodes"""
         for node in self.nodes:
             # Issue RPC to stop nodes
             node.stop_node(wait=wait, wait_until_stopped=False)
@@ -723,7 +723,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         return blocks
 
     def create_outpoints(self, node, *, outputs):
-        """Send funds to a given list of `{address: amount}` targets using the bitcoind
+        """Send funds to a given list of `{address: amount}` targets using the zeniumd
         wallet and return the corresponding outpoints as a list of dictionaries
         `[{"txid": txid, "vout": vout1}, {"txid": txid, "vout": vout2}, ...]`.
         The result can be used to specify inputs for RPCs like `createrawtransaction`,
@@ -804,7 +804,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         # User can provide log level as a number or string (eg DEBUG). loglevel was caught as a string, so try to convert it to an int
         ll = int(self.options.loglevel) if self.options.loglevel.isdigit() else self.options.loglevel.upper()
         ch.setLevel(ll)
-        # Format logs the same as bitcoind's debug.log with microprecision (so log files can be concatenated and sorted)
+        # Format logs the same as zeniumd's debug.log with microprecision (so log files can be concatenated and sorted)
         formatter = logging.Formatter(fmt='%(asctime)s.%(msecs)03d000Z %(name)s (%(levelname)s): %(message)s', datefmt='%Y-%m-%dT%H:%M:%S')
         formatter.converter = time.gmtime
         fh.setFormatter(formatter)
@@ -924,9 +924,9 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             raise SkipTest("bcc python module not available")
 
     def skip_if_no_bitcoind_tracepoints(self):
-        """Skip the running test if bitcoind has not been compiled with USDT tracepoint support."""
+        """Skip the running test if zeniumd has not been compiled with USDT tracepoint support."""
         if not self.is_usdt_compiled():
-            raise SkipTest("bitcoind has not been built with USDT tracepoints enabled.")
+            raise SkipTest("zeniumd has not been built with USDT tracepoints enabled.")
 
     def skip_if_no_bpf_permissions(self):
         """Skip the running test if we don't have permissions to do BPF syscalls and load BPF maps."""
@@ -945,9 +945,9 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             raise SkipTest("not on a POSIX system")
 
     def skip_if_no_bitcoind_zmq(self):
-        """Skip the running test if bitcoind has not been compiled with zmq support."""
+        """Skip the running test if zeniumd has not been compiled with zmq support."""
         if not self.is_zmq_compiled():
-            raise SkipTest("bitcoind has not been built with zmq enabled.")
+            raise SkipTest("zeniumd has not been built with zmq enabled.")
 
     def skip_if_no_wallet(self):
         """Skip the running test if wallet has not been compiled."""

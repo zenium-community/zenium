@@ -1,6 +1,6 @@
 # assumeutxo
 
-Assumeutxo is a feature that allows fast bootstrapping of a validating bitcoind
+Assumeutxo is a feature that allows fast bootstrapping of a validating zeniumd
 instance.
 
 ## Loading a snapshot
@@ -80,7 +80,7 @@ data.
 
 `ChainstateManager` manages a single Chainstate object, for which
 `m_snapshot_blockhash` is null. This chainstate is (maybe obviously)
-considered active. This is the "traditional" mode of operation for bitcoind.
+considered active. This is the "traditional" mode of operation for zeniumd.
 
 |    |    |
 | ---------- | ----------- |
