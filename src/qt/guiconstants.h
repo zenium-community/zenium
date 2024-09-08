@@ -47,7 +47,7 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Zenium"
-#define QAPP_ORG_DOMAIN "bitcoin.org"
+#define QAPP_ORG_DOMAIN "zenium.org"
 #define QAPP_APP_NAME_DEFAULT "Zenium-Qt"
 #define QAPP_APP_NAME_TESTNET "Zenium-Qt-testnet"
 #define QAPP_APP_NAME_TESTNET4 "Zenium-Qt-testnet4"
