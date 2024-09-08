@@ -1292,7 +1292,7 @@ BOOST_AUTO_TEST_CASE(test_ToUpper)
 BOOST_AUTO_TEST_CASE(test_Capitalize)
 {
     BOOST_CHECK_EQUAL(Capitalize(""), "");
-    BOOST_CHECK_EQUAL(Capitalize("bitcoin"), "Zenium");
+    BOOST_CHECK_EQUAL(Capitalize("zenium"), "Zenium");
     BOOST_CHECK_EQUAL(Capitalize("\x00\xfe\xff"), "\x00\xfe\xff");
 }
 
@@ -1609,7 +1609,7 @@ BOOST_AUTO_TEST_CASE(message_sign)
     const std::string message = "Trust no one";
 
     const std::string expected_signature =
-        "IPojfrX2dfPnH26UegfbGQQLrdK844DlHq5157/P6h57WyuS/Qsl+h/WSVGDF4MUi4rWSswW38oimDYfNNUBUOk=";
+        "ILrmAFJAwzx5eD/9EByP1WOumU6PZYNu5/KO7vEFWMLkTGCYl2mS9SNlMqAR9aIVjOeDWXKIddFhOcorlSKvai8=";
 
     CKey privkey;
     std::string generated_signature;
@@ -1671,14 +1671,14 @@ BOOST_AUTO_TEST_CASE(message_verify)
     BOOST_CHECK_EQUAL(
         MessageVerify(
             "15CRxFdyRpGZLW9w8HnHvVduizdL5jKNbs",
-            "IPojfrX2dfPnH26UegfbGQQLrdK844DlHq5157/P6h57WyuS/Qsl+h/WSVGDF4MUi4rWSswW38oimDYfNNUBUOk=",
+            "ILrmAFJAwzx5eD/9EByP1WOumU6PZYNu5/KO7vEFWMLkTGCYl2mS9SNlMqAR9aIVjOeDWXKIddFhOcorlSKvai8=",
             "Trust no one"),
         MessageVerificationResult::OK);
 
     BOOST_CHECK_EQUAL(
         MessageVerify(
-            "11canuhp9X2NocwCq7xNrQYTmUgZAnLK3",
-            "IIcaIENoYW5jZWxsb3Igb24gYnJpbmsgb2Ygc2Vjb25kIGJhaWxvdXQgZm9yIGJhbmtzIAaHRtbCeDZINyavx14=",
+            "15CRxFdyRpGZLW9w8HnHvVduizdL5jKNbs",
+            "IOrJWuKiGBj1uUPH316Yw7Y64UUYzFU2sI40asZv1z/HDxg5IrsSWYIpWMxnC8DHpxdjADGHivCLnvqdzFgE/B0=",
             "Trust me"),
         MessageVerificationResult::OK);
 }
@@ -1798,7 +1798,7 @@ BOOST_AUTO_TEST_CASE(util_WriteBinaryFile)
 {
     fs::path tmpfolder = m_args.GetDataDirBase();
     fs::path tmpfile = tmpfolder / "write_binary.dat";
-    std::string expected_text = "bitcoin";
+    std::string expected_text = "zenium";
     auto valid = WriteBinaryFile(tmpfile, expected_text);
     std::string actual_text;
     std::ifstream file{tmpfile};
