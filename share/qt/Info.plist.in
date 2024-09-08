@@ -51,7 +51,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.bitcoin.ZeniumPayment</string>
+      <string>org.zenium.ZeniumPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>bitcoin</string>

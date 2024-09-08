@@ -5,7 +5,7 @@ Upstart: zeniumd.conf
 OpenRC:  zeniumd.openrc
          zeniumd.openrcconf
 CentOS:  zeniumd.init
-macOS:   org.bitcoin.zeniumd.plist
+macOS:   org.zenium.zeniumd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 
