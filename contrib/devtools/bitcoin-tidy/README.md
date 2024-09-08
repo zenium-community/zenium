@@ -1,4 +1,4 @@
-# Bitcoin Tidy
+# Zenium Tidy
 
 Example Usage:
 

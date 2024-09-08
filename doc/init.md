@@ -87,9 +87,9 @@ OpenRC).
 ### macOS
 
     Binary:              /usr/local/bin/zeniumd
-    Configuration file:  ~/Library/Application Support/Bitcoin/zenium.conf
-    Data directory:      ~/Library/Application Support/Bitcoin
-    Lock file:           ~/Library/Application Support/Bitcoin/.lock
+    Configuration file:  ~/Library/Application Support/Zenium/zenium.conf
+    Data directory:      ~/Library/Application Support/Zenium
+    Lock file:           ~/Library/Application Support/Zenium/.lock
 
 Installing Service Configuration
 -----------------------------------

@@ -16,7 +16,7 @@ macOS comes with a built-in Terminal located in:
 ### 1. Xcode Command Line Tools
 
 The Xcode Command Line Tools are a collection of build tools for macOS.
-These tools must be installed in order to build Bitcoin Core from source.
+These tools must be installed in order to build Zenium Core from source.
 
 To install, run the following command from your terminal:
 
@@ -65,10 +65,10 @@ CC=$(brew --prefix llvm)/bin/clang CXX=$(brew --prefix llvm)/bin/clang++
 
 Try `llvm@17` if compilation fails with the default version of llvm.
 
-### 4. Clone Bitcoin repository
+### 4. Clone Zenium repository
 
 `git` should already be installed by default on your system.
-Now that all the required dependencies are installed, let's clone the Bitcoin Core repository to a directory.
+Now that all the required dependencies are installed, let's clone the Zenium Core repository to a directory.
 All build scripts and commands will run from this directory.
 
 ``` bash
@@ -102,7 +102,7 @@ brew install berkeley-db@4
 
 ###### Qt
 
-Bitcoin Core includes a GUI built with the cross-platform Qt Framework.
+Zenium Core includes a GUI built with the cross-platform Qt Framework.
 To compile the GUI, we need to install `qt@5`.
 Skip if you don't intend to use the GUI.
 
@@ -177,14 +177,14 @@ brew install python
 
 #### Deploy Dependencies
 
-You can deploy a `.zip` containing the Bitcoin Core application using `make deploy`.
+You can deploy a `.zip` containing the Zenium Core application using `make deploy`.
 It is required that you have `python` installed.
 
-## Building Bitcoin Core
+## Building Zenium Core
 
 ### 1. Configuration
 
-There are many ways to configure Bitcoin Core, here are a few common examples:
+There are many ways to configure Zenium Core, here are a few common examples:
 
 ##### Wallet (BDB + SQlite) Support, No GUI:
 
@@ -228,7 +228,7 @@ Examine the output of the following command for a full list of configuration opt
 ### 2. Compile
 
 After configuration, you are ready to compile.
-Run the following in your terminal to compile Bitcoin Core:
+Run the following in your terminal to compile Zenium Core:
 
 ``` bash
 make        # use "-j N" here for N parallel jobs
@@ -243,9 +243,9 @@ You can also create a  `.zip` containing the `.app` bundle by running the follow
 make deploy
 ```
 
-## Running Bitcoin Core
+## Running Zenium Core
 
-Bitcoin Core should now be available at `./src/zeniumd`.
+Zenium Core should now be available at `./src/zeniumd`.
 If you compiled support for the GUI, it should be available at `./src/qt/zenium-qt`.
 
 The first time you run `zeniumd` or `zenium-qt`, it will start downloading the blockchain.
@@ -254,23 +254,23 @@ This process could take many hours, or even days on slower than average systems.
 By default, blockchain and wallet data files will be stored in:
 
 ``` bash
-/Users/${USER}/Library/Application Support/Bitcoin/
+/Users/${USER}/Library/Application Support/Zenium/
 ```
 
 Before running, you may create an empty configuration file:
 
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/Bitcoin"
+mkdir -p "/Users/${USER}/Library/Application Support/Zenium"
 
-touch "/Users/${USER}/Library/Application Support/Bitcoin/zenium.conf"
+touch "/Users/${USER}/Library/Application Support/Zenium/zenium.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/Bitcoin/zenium.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/Zenium/zenium.conf"
 ```
 
 You can monitor the download process by looking at the debug.log file:
 
 ```shell
-tail -f $HOME/Library/Application\ Support/Bitcoin/debug.log
+tail -f $HOME/Library/Application\ Support/Zenium/debug.log
 ```
 
 ## Other commands:

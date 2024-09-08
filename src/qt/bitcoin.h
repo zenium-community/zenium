@@ -30,7 +30,7 @@ class Init;
 } // namespace interfaces
 
 
-/** Main Bitcoin application object */
+/** Main Zenium application object */
 class BitcoinApplication: public QApplication
 {
     Q_OBJECT

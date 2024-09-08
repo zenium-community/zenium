@@ -14,8 +14,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Bitcoin"
-            VALUE "FileDescription",    "zeniumd (Bitcoin node with a JSON-RPC server)"
+            VALUE "CompanyName",        "Zenium"
+            VALUE "FileDescription",    "zeniumd (Zenium node with a JSON-RPC server)"
             VALUE "FileVersion",        PACKAGE_VERSION
             VALUE "InternalName",       "zeniumd"
             VALUE "LegalCopyright",     COPYRIGHT_STR

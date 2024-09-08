@@ -14,8 +14,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Bitcoin"
-            VALUE "FileDescription",    "zenium-util (CLI Bitcoin utility)"
+            VALUE "CompanyName",        "Zenium"
+            VALUE "FileDescription",    "zenium-util (CLI Zenium utility)"
             VALUE "FileVersion",        PACKAGE_VERSION
             VALUE "InternalName",       "zenium-util"
             VALUE "LegalCopyright",     COPYRIGHT_STR
