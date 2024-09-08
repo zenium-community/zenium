@@ -5,7 +5,7 @@ Setup
 ---------------------
 Zenium Core is the original Zenium client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Zenium transactions, which requires a few hundred gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Zenium Core, visit [bitcoincore.org](https://bitcoincore.org/en/download/).
+To download Zenium Core, visit [zenium.org](https://zenium.org/en/download/).
 
 Running
 ---------------------
@@ -53,7 +53,7 @@ The Zenium repo's [root README](/README.md) contains relevant information on the
 - [Developer Notes](developer-notes.md)
 - [Productivity Notes](productivity.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://doxygen.bitcoincore.org/)
+- [Source Code Documentation (External Link)](https://doxygen.zenium.org/)
 - [Translation Process](translation_process.md)
 - [Translation Strings Policy](translation_strings_policy.md)
 - [JSON-RPC Interface](JSON-RPC-interface.md)

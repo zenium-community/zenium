@@ -234,7 +234,7 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 ```
 
 
-- Upload to the bitcoincore.org server:
+- Upload to the zenium.org server:
     1. The contents of each `./bitcoin/guix-build-${VERSION}/output/${HOST}/` directory.
 
        Guix will output all of the results into host subdirectories, but the SHA256SUMS
@@ -261,14 +261,14 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
   ```
 
   Insert the magnet URI into the announcement sent to mailing lists. This permits
-  people without access to `bitcoincore.org` to download the binary distribution.
+  people without access to `zenium.org` to download the binary distribution.
   Also put it into the `optional_magnetlink:` slot in the YAML file for
-  bitcoincore.org.
+  zenium.org.
 
 - Archive the release notes for the new version to `doc/release-notes/release-notes-${VERSION}.md`
   (branch `master` and branch of the release).
 
-- Update the bitcoincore.org website
+- Update the zenium.org website
 
   - blog post
 
@@ -297,7 +297,7 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
   - bitcoin-dev and bitcoin-core-dev mailing list
 
-  - Zenium Core announcements list https://bitcoincore.org/en/list/announcements/join/
+  - Zenium Core announcements list https://zenium.org/en/list/announcements/join/
 
   - Zenium Core Twitter https://twitter.com/bitcoincoreorg
 
