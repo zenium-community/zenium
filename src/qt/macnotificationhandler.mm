@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.bitcoinfoundation.Zenium-Qt";
+        return @"org.zenium.Zenium-Qt";
     } else {
         return [self __bundleIdentifier];
     }
