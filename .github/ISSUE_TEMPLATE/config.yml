@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Bitcoin Core Security Policy
-    url: https://github.com/bitcoin/bitcoin/blob/master/SECURITY.md
+  - name: Zenium Core Security Policy
+    url: https://github.com/zenium-community/zenium/blob/master/SECURITY.md
     about: View security policy
-  - name: Bitcoin Core Developers
+  - name: Zenium Core Developers
     url: https://zenium.org
-    about: Bitcoin Core homepage
+    about: Zenium Core homepage

@@ -1,0 +1,18 @@
+name: Activity Task
+description: Submit a new activity task.
+labels: [task]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## This tracker is only for activity task related to Zenium Core.
+
+        ----
+  - type: textarea
+    id: task-description
+    attributes:
+      label: Task description
+      description: Explain what needs to be done to complete this task
+    validations:
+      required: true
+
