@@ -249,7 +249,7 @@ fn get_pathspecs_exclude_whitespace() -> Vec<String> {
             "contrib/windeploy/win-codesign.cert",
             "doc/README_windows.txt",
             // Temporary excludes, or existing violations
-            "doc/release-notes/release-notes-0.*",
+            "doc/release-notes/release-notes-1.*",
             "contrib/init/zeniumd.openrc",
             "contrib/macdeploy/macdeployqtplus",
             "src/crypto/sha256_sse4.cpp",
