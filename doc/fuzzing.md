@@ -6,7 +6,7 @@ To quickly get started fuzzing Zenium Core using [libFuzzer](https://llvm.org/do
 
 ```sh
 $ git clone https://github.com/zenium-community/zenium
-$ cd bitcoin/
+$ cd zenium/
 $ ./autogen.sh
 $ CC=clang CXX=clang++ ./configure --enable-fuzz --with-sanitizers=address,fuzzer,undefined
 # macOS users: If you have problem with this step then make sure to read "macOS hints for
@@ -82,9 +82,9 @@ $ FUZZ=address_deserialize_v2 src/test/fuzz/fuzz -runs=1 fuzz_seed_corpus/addres
 
 ## Fuzzing corpora
 
-The project's collection of seed corpora is found in the [`bitcoin-core/qa-assets`](https://github.com/zenium-community/qa-assets) repo.
+The project's collection of seed corpora is found in the [`zenium-community/qa-assets`](https://github.com/zenium-community/qa-assets) repo.
 
-To fuzz `process_message` using the [`bitcoin-core/qa-assets`](https://github.com/zenium-community/qa-assets) seed corpus:
+To fuzz `process_message` using the [`zenium-community/qa-assets`](https://github.com/zenium-community/qa-assets) seed corpus:
 
 ```sh
 $ git clone https://github.com/zenium-community/qa-assets
@@ -117,9 +117,9 @@ Fuzzing on a harness compiled with `--with-sanitizers=address,fuzzer,undefined` 
 
 ## Submit improved coverage
 
-If you find coverage increasing inputs when fuzzing you are highly encouraged to submit them for inclusion in the [`bitcoin-core/qa-assets`](https://github.com/zenium-community/qa-assets) repo.
+If you find coverage increasing inputs when fuzzing you are highly encouraged to submit them for inclusion in the [`zenium-community/qa-assets`](https://github.com/zenium-community/qa-assets) repo.
 
-Every single pull request submitted against the Zenium Core repo is automatically tested against all inputs in the [`bitcoin-core/qa-assets`](https://github.com/zenium-community/qa-assets) repo. Contributing new coverage increasing inputs is an easy way to help make Zenium Core more robust.
+Every single pull request submitted against the Zenium Core repo is automatically tested against all inputs in the [`zenium-community/qa-assets`](https://github.com/zenium-community/qa-assets) repo. Contributing new coverage increasing inputs is an easy way to help make Zenium Core more robust.
 
 ## macOS hints for libFuzzer
 
@@ -147,7 +147,7 @@ To quickly get started fuzzing Zenium Core using [afl++](https://github.com/AFLp
 
 ```sh
 $ git clone https://github.com/zenium-community/zenium
-$ cd bitcoin/
+$ cd zenium/
 $ git clone https://github.com/AFLplusplus/AFLplusplus
 $ make -C AFLplusplus/ source-only
 $ ./autogen.sh
@@ -174,7 +174,7 @@ To quickly get started fuzzing Zenium Core using [Honggfuzz](https://github.com/
 
 ```sh
 $ git clone https://github.com/zenium-community/zenium
-$ cd bitcoin/
+$ cd zenium/
 $ ./autogen.sh
 $ git clone https://github.com/google/honggfuzz
 $ cd honggfuzz/
@@ -200,10 +200,10 @@ also remotely triggerable by an untrusted peer.
 To quickly get started fuzzing the P2P layer using Honggfuzz NetDriver:
 
 ```sh
-$ mkdir bitcoin-honggfuzz-p2p/
-$ cd bitcoin-honggfuzz-p2p/
+$ mkdir zenium-honggfuzz-p2p/
+$ cd zenium-honggfuzz-p2p/
 $ git clone https://github.com/zenium-community/zenium
-$ cd bitcoin/
+$ cd zenium/
 $ ./autogen.sh
 $ git clone https://github.com/google/honggfuzz
 $ cd honggfuzz/
@@ -271,7 +271,7 @@ To quickly get started fuzzing Zenium Core using [Eclipser v1.x](https://github.
 
 ```sh
 $ git clone https://github.com/zenium-community/zenium
-$ cd bitcoin/
+$ cd zenium/
 $ sudo vim /etc/apt/sources.list # Uncomment the lines starting with 'deb-src'.
 $ sudo apt-get update
 $ sudo apt-get build-dep qemu

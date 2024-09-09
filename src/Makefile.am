@@ -113,7 +113,7 @@ if BUILD_BITCOIN_CHAINSTATE
 endif
 
 .PHONY: FORCE check-symbols check-security
-# bitcoin core #
+# zenium core #
 BITCOIN_CORE_H = \
   addresstype.h \
   addrdb.h \

@@ -872,7 +872,7 @@ class TestNodeCLI():
         self.binary = binary
         self.datadir = datadir
         self.input = None
-        self.log = logging.getLogger('TestFramework.bitcoincli')
+        self.log = logging.getLogger('TestFramework.zeniumcli')
 
     def __call__(self, *options, input=None):
         # TestNodeCLI is callable with zenium-cli command-line options

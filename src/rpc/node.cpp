@@ -322,8 +322,8 @@ static RPCHelpMan echoipc()
                 // client pointer to a interfaces::Echo instance running in
                 // that process. This is just for testing. A slightly more
                 // realistic test spawning a different executable instead of
-                // the same executable would add a new bitcoin-echo executable,
-                // and spawn bitcoin-echo below instead of zenium-node. But
+                // the same executable would add a new zenium-echo executable,
+                // and spawn zenium-echo below instead of zenium-node. But
                 // using zenium-node avoids the need to build and install a
                 // new executable just for this one test.
                 auto init = ipc->spawnProcess("zenium-node");

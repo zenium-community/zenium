@@ -1,6 +1,7 @@
 Checks: '
 -*,
 bitcoin-*,
+zenium-*,
 bugprone-argument-comment,
 bugprone-move-forwarding-reference,
 bugprone-string-constructor,

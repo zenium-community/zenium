@@ -13,12 +13,12 @@ class BitcoinModule final : public clang::tidy::ClangTidyModule
 public:
     void addCheckFactories(clang::tidy::ClangTidyCheckFactories& CheckFactories) override
     {
-        CheckFactories.registerCheck<bitcoin::LogPrintfCheck>("bitcoin-unterminated-logprintf");
-        CheckFactories.registerCheck<bitcoin::NonTrivialThreadLocal>("bitcoin-nontrivial-threadlocal");
+        CheckFactories.registerCheck<zenium::LogPrintfCheck>("zenium-unterminated-logprintf");
+        CheckFactories.registerCheck<zenium::NonTrivialThreadLocal>("zenium-nontrivial-threadlocal");
     }
 };
 
 static clang::tidy::ClangTidyModuleRegistry::Add<BitcoinModule>
-    X("bitcoin-module", "Adds bitcoin checks.");
+    X("zenium-module", "Adds zenium checks.");
 
 volatile int BitcoinModuleAnchorSource = 0;

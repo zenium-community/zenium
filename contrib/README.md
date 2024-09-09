@@ -24,7 +24,7 @@ Build Tools and Keys
 ### Packaging ###
 The [Debian](/contrib/debian) subfolder contains the copyright file.
 
-All other packaging related files can be found in the [bitcoin-core/packaging](https://github.com/zenium-community/packaging) repository.
+All other packaging related files can be found in the [zenium-community/packaging](https://github.com/zenium-community/packaging) repository.
 
 ### [MacDeploy](/contrib/macdeploy) ###
 Scripts and notes for Mac builds.

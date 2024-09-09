@@ -165,11 +165,11 @@ want to use any other libraries built in depends, you can do:
 ```bash
 make -C depends NO_BOOST=1 NO_LIBEVENT=1 NO_QT=1 NO_SQLITE=1 NO_NATPMP=1 NO_UPNP=1 NO_ZMQ=1 NO_USDT=1
 ...
-to: /path/to/bitcoin/depends/x86_64-pc-linux-gnu
+to: /path/to/zenium/depends/x86_64-pc-linux-gnu
 ```
 and configure using the following:
 ```bash
-export BDB_PREFIX="/path/to/bitcoin/depends/x86_64-pc-linux-gnu"
+export BDB_PREFIX="/path/to/zenium/depends/x86_64-pc-linux-gnu"
 
 ./configure \
     BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" \
@@ -204,7 +204,7 @@ This example lists the steps necessary to setup and build a command line only di
 
     pacman --sync --needed autoconf automake boost gcc git libevent libtool make pkgconf python sqlite
     git clone https://github.com/zenium-community/zenium.git
-    cd bitcoin/
+    cd zenium/
     ./autogen.sh
     ./configure
     make check

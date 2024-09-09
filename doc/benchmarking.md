@@ -15,7 +15,7 @@ and lock analysis.
 
     make -C src zenium_bench
 
-After compiling bitcoin-core, the benchmarks can be run with:
+After compiling zenium-core, the benchmarks can be run with:
 
     src/bench/bench_zenium
 

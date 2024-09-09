@@ -46,7 +46,7 @@ TEST_EXIT_PASSED = 0
 TEST_EXIT_FAILED = 1
 TEST_EXIT_SKIPPED = 77
 
-TMPDIR_PREFIX = "bitcoin_func_test_"
+TMPDIR_PREFIX = "zenium_func_test_"
 
 
 class SkipTest(Exception):
@@ -77,9 +77,9 @@ class BitcoinTestMetaClass(type):
 
 
 class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
-    """Base class for a bitcoin test script.
+    """Base class for a zenium test script.
 
-    Individual bitcoin test scripts should subclass this class and override the set_test_params() and run_test() methods.
+    Individual zenium test scripts should subclass this class and override the set_test_params() and run_test() methods.
 
     Individual tests can also override the following methods to customize the test setup:
 
@@ -236,10 +236,10 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         """Update self.options with the paths of all binaries from environment variables or their default values"""
 
         binaries = {
-            "zeniumd": ("bitcoind", "BITCOIND"),
-            "zenium-cli": ("bitcoincli", "BITCOINCLI"),
-            "zenium-util": ("bitcoinutil", "BITCOINUTIL"),
-            "zenium-wallet": ("bitcoinwallet", "BITCOINWALLET"),
+            "zeniumd": ("zeniumd", "ZENIUMD"),
+            "zenium-cli": ("zeniumcli", "ZENIUMCLI"),
+            "zenium-util": ("zeniumutil", "ZENIUMUTIL"),
+            "zenium-wallet": ("zeniumwallet", "ZENIUMWALLET"),
         }
         for binary, [attribute_name, env_variable_name] in binaries.items():
             default_filename = os.path.join(

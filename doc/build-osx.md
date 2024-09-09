@@ -276,7 +276,7 @@ tail -f $HOME/Library/Application\ Support/Zenium/debug.log
 ## Other commands:
 
 ```shell
-./src/zeniumd -daemon      # Starts the bitcoin daemon.
+./src/zeniumd -daemon      # Starts the zenium daemon.
 ./src/zenium-cli --help    # Outputs a list of command-line options.
 ./src/zenium-cli help      # Outputs a list of RPC commands when the daemon is running.
 ./src/qt/zenium-qt -server # Starts the zenium-qt server mode, allows zenium-cli control

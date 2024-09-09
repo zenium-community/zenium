@@ -557,7 +557,7 @@ BOOST_AUTO_TEST_CASE(streams_hashed)
 {
     DataStream stream{};
     HashedSourceWriter hash_writer{stream};
-    const std::string data{"bitcoin"};
+    const std::string data{"zenium"};
     hash_writer << data;
 
     HashVerifier hash_verifier{stream};

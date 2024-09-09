@@ -11,7 +11,7 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>bitcoin.icns</string>
+  <string>zenium.icns</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>
@@ -54,7 +54,7 @@
       <string>org.zenium.ZeniumPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>bitcoin</string>
+        <string>zenium</string>
       </array>
     </dict>
   </array>

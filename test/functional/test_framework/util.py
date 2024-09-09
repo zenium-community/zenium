@@ -457,7 +457,7 @@ def get_temp_default_datadir(temp_dir: pathlib.Path) -> tuple[dict, pathlib.Path
         if platform.system() == "Darwin":
             datadir = temp_dir / "Library/Application Support/Zenium"
         else:
-            datadir = temp_dir / ".bitcoin"
+            datadir = temp_dir / ".zenium"
     return env, datadir
 
 

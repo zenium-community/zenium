@@ -113,8 +113,8 @@ static int AppInitRawTx(int argc, char* argv[])
             strUsage += FormatParagraph(LicenseInfo());
         } else {
             strUsage += "\n"
-                "Usage:  zenium-tx [options] <hex-tx> [commands]  Update hex-encoded bitcoin transaction\n"
-                "or:     zenium-tx [options] -create [commands]   Create hex-encoded bitcoin transaction\n"
+                "Usage:  zenium-tx [options] <hex-tx> [commands]  Update hex-encoded zenium transaction\n"
+                "or:     zenium-tx [options] -create [commands]   Create hex-encoded zenium transaction\n"
                 "\n";
             strUsage += gArgs.GetHelpMessage();
         }
@@ -816,7 +816,7 @@ static int CommandLineRawTx(int argc, char* argv[])
             if (argc < 2)
                 throw std::runtime_error("too few parameters");
 
-            // param: hex-encoded bitcoin transaction
+            // param: hex-encoded zenium transaction
             std::string strHexTx(argv[1]);
             if (strHexTx == "-")                 // "-" implies standard input
                 strHexTx = readStdin();

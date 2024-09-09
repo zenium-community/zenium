@@ -701,7 +701,7 @@ fs::path GetDefaultDataDir()
     //   old: C:\Users\Username\AppData\Roaming\Zenium
     //   new: C:\Users\Username\AppData\Local\Zenium
     // macOS: ~/Library/Application Support/Zenium
-    // Unix-like: ~/.bitcoin
+    // Unix-like: ~/.zenium
 #ifdef WIN32
     // Windows
     // Check for existence of datadir in old location and keep it there
@@ -722,7 +722,7 @@ fs::path GetDefaultDataDir()
     return pathRet / "Library/Application Support/Zenium";
 #else
     // Unix-like
-    return pathRet / ".bitcoin";
+    return pathRet / ".zenium";
 #endif
 #endif
 }

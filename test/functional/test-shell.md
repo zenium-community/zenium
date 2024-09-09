@@ -30,7 +30,7 @@ importing the `TestShell` class from the `test_shell` sub-package.
 
 ```
 >>> import sys
->>> sys.path.insert(0, "/path/to/bitcoin/test/functional")
+>>> sys.path.insert(0, "/path/to/zenium/test/functional")
 >>> from test_framework.test_shell import TestShell
 ```
 
@@ -52,7 +52,7 @@ The following sections demonstrate how to initialize, run, and shut down a
 
 ```
 >>> test = TestShell().setup(num_nodes=2, setup_clean_chain=True)
-20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Initializing test directory /path/to/bitcoin_func_test_XXXXXXX
+20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Initializing test directory /path/to/zenium_func_test_XXXXXXX
 ```
 The `TestShell` forwards all functional test parameters of the parent
 `BitcoinTestFramework` object. The full set of argument keywords which can be
@@ -139,7 +139,7 @@ instances and remove all temporary data and logging directories.
 ```
 >>> test.shutdown()
 20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Stopping nodes
-20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Cleaning up /path/to/bitcoin_func_test_XXXXXXX on exit
+20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Cleaning up /path/to/zenium_func_test_XXXXXXX on exit
 20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Tests successful
 ```
 To prevent the logs from being removed after a shutdown, simply set the
@@ -148,15 +148,15 @@ To prevent the logs from being removed after a shutdown, simply set the
 >>> test.options.nocleanup = True
 >>> test.shutdown()
 20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Stopping nodes
-20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Not cleaning up dir /path/to/bitcoin_func_test_XXXXXXX on exit
+20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Not cleaning up dir /path/to/zenium_func_test_XXXXXXX on exit
 20XX-XX-XXTXX:XX:XX.XXXXXXX TestFramework (INFO): Tests successful
 ```
 
 The following utility consolidates logs from the zeniumd nodes and the
 underlying `BitcoinTestFramework`:
 
-* `/path/to/bitcoin/test/functional/combine_logs.py
-  '/path/to/bitcoin_func_test_XXXXXXX'`
+* `/path/to/zenium/test/functional/combine_logs.py
+  '/path/to/zenium_func_test_XXXXXXX'`
 
 ## 6. Custom `TestShell` parameters
 
@@ -170,9 +170,9 @@ can be called after the TestShell is shut down.
 | Test parameter key | Default Value | Description |
 |---|---|---|
 | `bind_to_localhost_only` | `True` | Binds zeniumd P2P services to `127.0.0.1` if set to `True`.|
-| `cachedir` | `"/path/to/bitcoin/test/cache"` | Sets the zeniumd datadir directory. |
+| `cachedir` | `"/path/to/zenium/test/cache"` | Sets the zeniumd datadir directory. |
 | `chain`  | `"regtest"` | Sets the chain-type for the underlying test zeniumd processes. |
-| `configfile` | `"/path/to/bitcoin/test/config.ini"` | Sets the location of the test framework config file. |
+| `configfile` | `"/path/to/zenium/test/config.ini"` | Sets the location of the test framework config file. |
 | `coveragedir` | `None` | Records zeniumd RPC test coverage into this directory if set. |
 | `loglevel` | `INFO` | Logs events at this level and higher. Can be set to `DEBUG`, `INFO`, `WARNING`, `ERROR` or `CRITICAL`. |
 | `nocleanup` | `False` | Cleans up temporary test directory if set to `True` during `shutdown`. |

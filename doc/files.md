@@ -26,7 +26,7 @@ The data directory is the default location where the Zenium Core files are store
 
 Platform | Data directory path
 ---------|--------------------
-Linux    | `$HOME/.bitcoin/`
+Linux    | `$HOME/.zenium/`
 macOS    | `$HOME/Library/Application Support/Zenium/`
 Windows  | `%LOCALAPPDATA%\Zenium\` <sup>[\[1\]](#note1)</sup>
 

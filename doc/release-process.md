@@ -116,7 +116,7 @@ Generate list of authors:
 Checkout the Zenium Core version you'd like to build:
 
 ```sh
-pushd ./bitcoin
+pushd ./zenium
 SIGNER='(your builder key, ie bluematt, sipa, etc)'
 VERSION='(new version without v-prefix, e.g. 25.0)'
 git fetch origin "v${VERSION}"
@@ -164,7 +164,7 @@ Then open a Pull Request to the [guix.sigs repository](https://github.com/zenium
 
 In the `guix-build-${VERSION}/output/x86_64-apple-darwin` and `guix-build-${VERSION}/output/arm64-apple-darwin` directories:
 
-    tar xf bitcoin-osx-unsigned.tar.gz
+    tar xf zenium-osx-unsigned.tar.gz
     ./detached-sig-create.sh /path/to/codesign.p12
     Enter the keychain password and authorize the signature
     signature-osx.tar.gz will be created
@@ -173,7 +173,7 @@ In the `guix-build-${VERSION}/output/x86_64-apple-darwin` and `guix-build-${VERS
 
 In the `guix-build-${VERSION}/output/x86_64-w64-mingw32` directory:
 
-    tar xf bitcoin-win-unsigned.tar.gz
+    tar xf zenium-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
@@ -235,7 +235,7 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
 
 - Upload to the zenium.org server:
-    1. The contents of each `./bitcoin/guix-build-${VERSION}/output/${HOST}/` directory.
+    1. The contents of each `./zenium/guix-build-${VERSION}/output/${HOST}/` directory.
 
        Guix will output all of the results into host subdirectories, but the SHA256SUMS
        file does not include these subdirectories. In order for downloads via torrent
@@ -248,8 +248,8 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
     3. The `SHA256SUMS.asc` combined signature file you just created.
 
-- After uploading release candidate binaries, notify the bitcoin-core-dev mailing list and
-  bitcoin-dev group that a release candidate is available for testing. Include a link to the release
+- After uploading release candidate binaries, notify the zenium-core-dev mailing list and
+  zenium-dev group that a release candidate is available for testing. Include a link to the release
   notes draft.
 
 - The server will automatically create an OpenTimestamps file and torrent of the directory.
@@ -287,7 +287,7 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
   - Update packaging repo
 
-      - Push the flatpak to flathub, e.g. https://github.com/flathub/org.bitcoincore.bitcoin-qt/pull/2
+      - Push the flatpak to flathub, e.g. https://github.com/flathub/org.zenium.zenium-qt/pull/2
 
       - Push the snap, see https://github.com/zenium-community/packaging/blob/main/snap/local/build.md
 
@@ -295,11 +295,11 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
 - Announce the release:
 
-  - bitcoin-dev and bitcoin-core-dev mailing list
+  - zenium-dev and zenium-core-dev mailing list
 
   - Zenium Core announcements list https://zenium.org/en/list/announcements/join/
 
-  - Zenium Core Twitter https://twitter.com/bitcoincoreorg
+  - Zenium Core Twitter https://twitter.com/zeniumorg
 
   - Celebrate
 

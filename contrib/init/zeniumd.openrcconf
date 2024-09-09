@@ -1,7 +1,7 @@
 # /etc/conf.d/zeniumd: config file for /etc/init.d/zeniumd
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/bitcoin/zenium.conf"
+#BITCOIND_CONFIGFILE="/etc/zenium/zenium.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
 #BITCOIND_PIDDIR="/var/run/zeniumd"
@@ -13,8 +13,8 @@
 #BITCOIND_DATADIR="/var/lib/zeniumd"
 
 # User and group to own zeniumd process
-#BITCOIND_USER="bitcoin"
-#BITCOIND_GROUP="bitcoin"
+#BITCOIND_USER="zenium"
+#BITCOIND_GROUP="zenium"
 
 # Path to zeniumd executable
 #BITCOIND_BIN="/usr/bin/zeniumd"

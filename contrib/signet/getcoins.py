@@ -76,16 +76,16 @@ parser.add_argument('-a', '--addr', dest='addr', default='', help='Zenium addres
 parser.add_argument('-p', '--password', dest='password', default='', help='Faucet password, if any')
 parser.add_argument('-n', '--amount', dest='amount', default='0.001', help='Amount to request (0.001-0.1, default is 0.001)')
 parser.add_argument('-i', '--imagemagick', dest='imagemagick', default=CONVERT, help='Path to imagemagick convert utility')
-parser.add_argument('bitcoin_cli_args', nargs='*', help='Arguments to pass on to zenium-cli (default: -signet)')
+parser.add_argument('zenium_cli_args', nargs='*', help='Arguments to pass on to zenium-cli (default: -signet)')
 
 args = parser.parse_args()
 
-if args.bitcoin_cli_args == []:
-    args.bitcoin_cli_args = ['-signet']
+if args.zenium_cli_args == []:
+    args.zenium_cli_args = ['-signet']
 
 
 def bitcoin_cli(rpc_command_and_params):
-    argv = [args.cmd] + args.bitcoin_cli_args + rpc_command_and_params
+    argv = [args.cmd] + args.zenium_cli_args + rpc_command_and_params
     try:
         return subprocess.check_output(argv).strip().decode()
     except FileNotFoundError:

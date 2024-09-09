@@ -2,7 +2,7 @@
 
 *.exe
 *.pdb
-src/bitcoin
+src/zenium
 src/zeniumd
 src/zenium-cli
 src/zenium-gui
@@ -50,11 +50,11 @@ src/qt/forms/ui_*.h
 
 src/qt/test/moc*.cpp
 
-src/qt/bitcoin-qt.config
-src/qt/bitcoin-qt.creator
-src/qt/bitcoin-qt.creator.user
-src/qt/bitcoin-qt.files
-src/qt/bitcoin-qt.includes
+src/qt/zenium-qt.config
+src/qt/zenium-qt.creator
+src/qt/zenium-qt.creator.user
+src/qt/zenium-qt.files
+src/qt/zenium-qt.includes
 
 .deps
 .dirstamp
@@ -100,7 +100,7 @@ Makefile.am.user
 
 # Unit-tests
 Makefile.test
-bitcoin-qt_test
+zenium-qt_test
 
 # Resources cpp
 qrc_*.cpp

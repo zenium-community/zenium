@@ -20,7 +20,7 @@ public:
     State validate(QString &input, int &pos) const override;
 };
 
-/** Zenium address widget validator, checks for a valid bitcoin address.
+/** Zenium address widget validator, checks for a valid zenium address.
  */
 class BitcoinAddressCheckValidator : public QValidator
 {

@@ -5,7 +5,7 @@
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/bitcoin/zenium.conf, but keep in mind those explicitly
+# /etc/zenium/zenium.conf, but keep in mind those explicitly
 # specified as arguments in ExecStart= will override those in the
 # config file.
 
@@ -19,14 +19,14 @@ Wants=network-online.target
 
 [Service]
 ExecStart=/usr/bin/zeniumd -pid=/run/zeniumd/zeniumd.pid \
-                           -conf=/etc/bitcoin/zenium.conf \
+                           -conf=/etc/zenium/zenium.conf \
                            -datadir=/var/lib/zeniumd \
                            -startupnotify='systemd-notify --ready' \
                            -shutdownnotify='systemd-notify --stopping'
 
 # Make sure the config directory is readable by the service user
 PermissionsStartOnly=true
-ExecStartPre=/bin/chgrp bitcoin /etc/bitcoin
+ExecStartPre=/bin/chgrp zenium /etc/zenium
 
 # Process management
 ####################
@@ -42,16 +42,16 @@ TimeoutStopSec=600
 # Directory creation and permissions
 ####################################
 
-# Run as bitcoin:bitcoin
-User=bitcoin
-Group=bitcoin
+# Run as zenium:zenium
+User=zenium
+Group=zenium
 
 # /run/zeniumd
 RuntimeDirectory=zeniumd
 RuntimeDirectoryMode=0710
 
-# /etc/bitcoin
-ConfigurationDirectory=bitcoin
+# /etc/zenium
+ConfigurationDirectory=zenium
 ConfigurationDirectoryMode=0710
 
 # /var/lib/zeniumd

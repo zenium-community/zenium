@@ -65,7 +65,7 @@ public:
     virtual std::string getName() = 0;
 };
 
-//! Top-level interface for a bitcoin node (zeniumd process).
+//! Top-level interface for a zenium node (zeniumd process).
 class Node
 {
 public:
