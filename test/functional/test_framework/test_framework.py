@@ -510,9 +510,9 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         if versions is None:
             versions = [None] * num_nodes
         if binary is None:
-            binary = [get_bin_from_version(v, 'zeniumd', self.options.bitcoind) for v in versions]
+            binary = [get_bin_from_version(v, 'zeniumd', self.options.zeniumd) for v in versions]
         if binary_cli is None:
-            binary_cli = [get_bin_from_version(v, 'zenium-cli', self.options.bitcoincli) for v in versions]
+            binary_cli = [get_bin_from_version(v, 'zenium-cli', self.options.zeniumcli) for v in versions]
         assert_equal(len(extra_confs), num_nodes)
         assert_equal(len(extra_args), num_nodes)
         assert_equal(len(versions), num_nodes)
@@ -527,8 +527,8 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
                 rpchost=rpchost,
                 timewait=self.rpc_timeout,
                 timeout_factor=self.options.timeout_factor,
-                bitcoind=binary[i],
-                bitcoin_cli=binary_cli[i],
+                zeniumd=binary[i],
+                zenium_cli=binary_cli[i],
                 version=versions[i],
                 coverage_dir=self.options.coveragedir,
                 cwd=self.options.tmpdir,
@@ -844,8 +844,8 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
                     rpchost=None,
                     timewait=self.rpc_timeout,
                     timeout_factor=self.options.timeout_factor,
-                    bitcoind=self.options.bitcoind,
-                    bitcoin_cli=self.options.bitcoincli,
+                    zeniumd=self.options.zeniumd,
+                    zenium_cli=self.options.zeniumcli,
                     coverage_dir=None,
                     cwd=self.options.tmpdir,
                     descriptors=self.options.descriptors,
